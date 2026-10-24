@@ -30,7 +30,7 @@
 ```
  TẦNG 0 — TRƯỚC GIẢI (ban y tế + BTC)
    Dự báo WBGT theo giờ (≥10 năm dữ liệu lịch sử, IOC 2022) ──► chọn giờ xuất phát, cờ dự kiến, bố trí bồn CWI/AED
-   Đăng ký VĐV: tuổi, HRrest, HRmax (đo hoặc 220−tuổi), yếu tố nguy cơ (R6), nhóm nguy cơ EAH, đồng ý dữ liệu (NĐ 13/2023)
+   Đăng ký VĐV: tuổi, HRrest, HRmax (đo hoặc 220−tuổi), yếu tố nguy cơ (R6), nhóm nguy cơ EAH, đồng ý dữ liệu (Luật BVDLCN 91/2025 + NĐ 356/2025)
 
  TẦNG 1 — THIẾT BỊ TRÊN NGƯỜI VĐV                       TẦNG 2 — APP ĐIỆN THOẠI VĐV (edge, chạy được offline)
  ┌──────────────────────────────┐   BLE HRS 1 Hz    ┌─────────────────────────────────────────────────────────┐
@@ -288,7 +288,7 @@ Trong S2, Tc mô phỏng đạt 39,5 °C ở phút 50 và 40,5 °C ở phút 67.
 - **R8, sàn tốc độ tăng 38,5 và các tham số QC:** là đề xuất của kỹ sư, cần clinical-advisor duyệt.
 - **Phiên bản ECTemp:** dùng bản bậc 2. Bản sigmoid chưa có hệ số ❓. Engine dễ thay hàm quan sát qua `heatstrain`.
 - **Độ phân giải 1 phút:** phát hiện ngừng tim cần xử lý ở 1 Hz tại thiết bị.
-- **Ngoài phạm vi prototype:** pháp lý về dữ liệu sức khoẻ (NĐ 13/2023), phân loại trang thiết bị y tế (NĐ 98/2021), và bằng sáng chế ECTemp/aPSI.
+- **Ngoài phạm vi prototype:** pháp lý về dữ liệu sức khoẻ (Luật BVDLCN 91/2025 + NĐ 356/2025), phân loại trang thiết bị y tế (NĐ 98/2021), và bằng sáng chế ECTemp/aPSI.
 
 ## 8. Kế hoạch kiểm định đề xuất
 
