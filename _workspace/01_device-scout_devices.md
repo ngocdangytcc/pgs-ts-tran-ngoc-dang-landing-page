@@ -333,7 +333,7 @@
 - nhà phân phối chính hãng của Garmin, Apple, Samsung, Polar (nhiều khả năng có);
 - CORE (nhiều khả năng phải mua quốc tế);
 - viên nang (phải nhập khẩu, có thể cần phân loại trang thiết bị y tế theo NĐ 98/2021);
-- dữ liệu sức khoẻ thuộc phạm vi NĐ 13/2023.
+- dữ liệu sức khoẻ thuộc phạm vi Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 + NĐ 356/2025/NĐ-CP (hiệu lực 01/01/2026; dữ liệu sức khoẻ là dữ liệu nhạy cảm).
 
 **Sáng chế (gặp ngẫu nhiên, chưa tra cứu hệ thống):**
 - US 12426839 "Method for estimating core body temperature": dùng HR từ EQ02. Chủ sở hữu và hiệu lực ❓.

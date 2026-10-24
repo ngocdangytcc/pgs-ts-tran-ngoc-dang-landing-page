@@ -18,7 +18,7 @@ Bước lặp (mỗi phút):
   k = v̂·c / (c²·v̂ + σ)
   Tc_t = Tĉ + k·(HR_t − (b2·Tĉ² + b1·Tĉ + b0))
   v_t = (1 − k·c)·v̂
-Kiểm định gốc: bias −0,03 ± 0,32 °C, LoA ±0,63 °C, n = 83. Giới hạn: đường bậc 2 bão hoà quanh ~42 °C/195 bpm → đánh giá thấp Tc ở vùng nguy hiểm (độ nhạy Tc > 39,5 °C chỉ ~4% ở VĐV nóng ẩm, de Korte 2022). Bản hiện hành là ECTemp sigmoid (Looney 2018). Các nghiên cứu sau (vd. Buller 2015 — VĐV/huấn luyện quân sự; Looney 2018; de Korte 2022; Hintz 2023; Seng 2016 là mô hình NLME riêng, không phải kiểm định ECTemp; Eggenberger 2018; Welles 2018 — "aĉTemp" dùng thêm gia tốc/nhiệt da) → agent tra cứu và ghi kết quả.
+Kiểm định gốc: bias −0,03 ± 0,32 °C, LoA ±0,63 °C, n = 83. Giới hạn: đường bậc 2 bão hoà quanh ~42 °C/195 bpm → đánh giá thấp Tc ở vùng nguy hiểm (độ nhạy Tc > 39,5 °C chỉ ~4% ở VĐV nóng ẩm, de Korte 2022). Bản hiện hành là ECTemp sigmoid (Looney 2018). Các nghiên cứu sau (vd. Buller 2015 — VĐV/huấn luyện quân sự; Looney 2018; de Korte 2022; Hintz 2023; Seng 2016 là mô hình NLME riêng, không phải kiểm định ECTemp; Eggenberger 2018; Welles 2018 — Kalman tuyến tính dùng nhiệt da + dòng nhiệt + HR, không dùng gia tốc) → agent tra cứu và ghi kết quả.
 
 ## 2. Cảm biến kép / dòng nhiệt (Gunga HC et al., 2008, J Therm Biol 33:297)
 Giả định dòng nhiệt một chiều qua mô (R_t) và qua cảm biến (R_s):
@@ -28,7 +28,7 @@ T1 = nhiệt độ mặt tiếp xúc da, T2 = nhiệt độ mặt ngoài. K hi�
 ## 3. PSI (Moran DS et al., 1998, Am J Physiol 275:R129–R134)
   PSI = 5·(Tc_t − Tc_0)/(39,5 − Tc_0) + 5·(HR_t − HR_0)/(180 − HR_0)   (thang 0–10)
 Phân loại thường dùng: 0–2 không/rất thấp, 3–4 thấp, 5–6 vừa, 7–8 cao, 9–10 rất cao.
-Biến thể cần tra: aPSI (Adaptive PSI, Buller 2023; phát hiện EHI 87% so với ECTemp 23% ở 5080 tân binh — Buller 2025); Buller 2008 là bộ phân loại nguy cơ PSI ≥ 7,5, PSI dùng HRmax cá nhân, CSI (Contextual/Cumulative strain), Heat Strain Score Index.
+Biến thể cần tra: aPSI (Adaptive PSI, Buller 2023; phát hiện EHI 86,7% so với ECTemp 23,3% ở 5080 tân binh — Buller 2025); Buller 2008 là bộ phân loại nguy cơ PSI ≥ 7,5, PSI dùng HRmax cá nhân, CSI (Contextual/Cumulative strain), Heat Strain Score Index.
 
 ## 4. Mô hình đa biến / ML
 Hồi quy/ML từ HR + nhiệt da + gia tốc + nhiệt độ/độ ẩm môi trường (vd. Richmond 2015; Niedermann 2014; Eggenberger 2018; các mô hình LSTM/gradient boosting gần đây). Ghi: dữ liệu huấn luyện, kiểm định ngoài, RMSE.

@@ -24,7 +24,7 @@ Mục đích: biết giải pháp **đã tồn tại hay chưa**, tránh làm l�
 Với mỗi sản phẩm:
 1. **Trạng thái**: 🟢 đang bán · 🟡 thí điểm/B2B/quân đội · 🔴 ngừng bán/công ty đóng cửa/bị mua lại · ⚪ chỉ nghiên cứu. Nguồn: trang bán hàng, thông cáo, tin tức, LinkedIn công ty — ghi **ngày truy cập**.
 2. **Kênh bán & giá**: bán lẻ hay hợp đồng doanh nghiệp, giá thiết bị + thuê bao.
-3. **Việt Nam**: có nhà phân phối/chính hãng? mua quốc tế? phân loại trang thiết bị y tế (Nghị định 98/2021/NĐ-CP & sửa đổi); dữ liệu sức khoẻ (Nghị định 13/2023/NĐ-CP).
+3. **Việt Nam**: có nhà phân phối/chính hãng? mua quốc tế? phân loại trang thiết bị y tế (NĐ 98/2021/NĐ-CP, sửa đổi bởi NĐ 07/2023 & NĐ 04/2025; TT 05/2022); dữ liệu sức khoẻ (Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 + NĐ 356/2025/NĐ-CP, thay NĐ 13/2023).
 4. **Giấy phép**: FDA (510k/De Novo/wellness), CE MDR, hay chỉ "wellness" — quyết định có được dùng tuyên bố y tế không.
 
 Với ý tưởng tổng thể (đo → ước tính Tc → cảnh báo → can thiệp):

@@ -11,3 +11,5 @@
 | 2026-10-24 | Thêm agent `market-analyst` + Phase kiểm tra thị trường | agents/market-analyst.md, wearable-device-survey §3, orchestrator Phase 3 | Người dùng yêu cầu thêm bước kiểm tra "đã có trên thị trường chưa" |
 | 2026-10-24 | Sửa trích dẫn/tham số (Gunga 2008 J Therm Biol, aPSI Buller 2023, v0, kết quả kiểm định ECTemp) | skills/core-temp-modeling | Phát hiện của thermo-modeler khi chạy lần đầu |
 | 2026-10-24 | Bỏ lời khuyên "uống nước" mặc định ở mức 2 | skills/core-temp-modeling/scripts/heatstrain.py | Kịch bản hạ natri máu của algorithm-engineer cho thấy lời khuyên này có hại |
+| 2026-10-24 | Tc ước tính tối đa mức 3; mức 4 (EHS) chỉ khi Tre đo ≥ 40,5 °C (IOC 2021) | skills/core-temp-modeling/scripts/heatstrain.py | ❌ của evidence-verifier |
+| 2026-10-24 | Cập nhật văn bản pháp luật VN (Luật BVDLCN 91/2025, NĐ 356/2025, NĐ 07/2023, 04/2025, TT 05/2022) | wearable-device-survey, agents/market-analyst.md | ❌ của evidence-verifier |

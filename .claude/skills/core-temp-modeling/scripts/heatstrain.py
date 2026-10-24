@@ -34,8 +34,9 @@ ECTEMP_PARAMS = {
 # Ngưỡng cảnh báo mặc định (tham số, không phải chuẩn lâm sàng tuyệt đối)
 DEFAULT_THRESHOLDS = {
     "tc_levels": [  # (ngưỡng dưới, mức, nhãn)
-        # IOC 2021: chẩn đoán EHS khi Tre ≥ 40,5 °C + rối loạn TKTW; 40,0 giữ làm ngưỡng cảnh báo sớm (nhạy hơn)
-        (40.0, 4, "NGUY HIỂM – nghi say nắng gắng sức (EHS): dừng ngay, đánh giá thần kinh, làm mát tích cực"),
+        # IOC 2021: chẩn đoán EHS khi Tre ĐO ĐƯỢC ≥ 40,5 °C + rối loạn TKTW → mức 4 chỉ dành cho Tc đo trực tiếp
+        (40.5, 4, "NGUY HIỂM – Tre ≥ 40,5 °C: nếu có rối loạn TKTW → EHS, ngâm nước lạnh ngay (cool first, transport second)"),
+        (40.0, 3, "CAO – dừng ngay; nhân viên y tế đánh giá TKTW và đo nhiệt độ trực tràng"),
         (39.5, 3, "CAO – dừng vận động, làm mát, theo dõi sát"),
         (39.0, 2, "CẢNH GIÁC – giảm cường độ, nghỉ trong bóng râm, uống theo cảm giác khát (KHÔNG khuyến uống thêm nếu nghi hạ natri máu: tăng cân, phù, lú lẫn)"),
         (38.5, 1, "THEO DÕI – tăng tần suất kiểm tra"),
@@ -77,17 +78,20 @@ def psi(tc_t, hr_t, tc_0, hr_0, tc_max=39.5, hr_max=180.0):
     return 5 * (tc_t - tc_0) / (tc_max - tc_0) + 5 * (hr_t - hr_0) / (hr_max - hr_0)
 
 
-def classify(tc, tc_10min_ago=None, psi_val=None, th=None):
+def classify(tc, tc_10min_ago=None, psi_val=None, th=None, measured=False):
+    """measured=False (Tc ước tính từ thiết bị) → tối đa mức 3; mức 4 cần Tc đo trực tiếp."""
     th = th or DEFAULT_THRESHOLDS
     labels = {lv: lb for _, lv, lb in th["tc_levels"]}
     level = next((lv for lo, lv, _ in th["tc_levels"] if tc >= lo), 0)
     reasons = [f"Tc≈{tc:.2f}°C"]
     if tc_10min_ago is not None and tc - tc_10min_ago >= th["rise_rate_c_per_10min"]:
         reasons.append(f"Tc tăng {tc - tc_10min_ago:.2f}°C/10 phút")
-        level = min(level + 1, 4)
+        level = min(level + 1, 3) if level < 4 else 4
     if psi_val is not None and psi_val >= th["psi_high"]:
         reasons.append(f"PSI={psi_val:.1f}")
         level = max(level, 2)
+    if not measured:
+        level = min(level, 3)
     label = labels.get(level, "BÌNH THƯỜNG")
     return {"level": level, "label": label, "reasons": reasons}
 
@@ -104,7 +108,7 @@ def run(rows, hr0=None, tc0=None):
             tc_src = float(r["tc_measured"])  # ưu tiên giá trị đo trực tiếp nếu có
         prev = results[i - 10]["tc_used"] if i >= 10 else None
         p = psi(tc_src, hrs[i], tc_base, hr0) if hrs[i] is not None else None
-        c = classify(tc_src, prev, p)
+        c = classify(tc_src, prev, p, measured=r.get("tc_measured") not in (None, ""))
         results.append({"minute": r.get("minute", i), "hr": hrs[i], "tc_ectemp": round(tc, 3),
                         "tc_sd": round(var ** 0.5, 3), "tc_used": round(tc_src, 3),
                         "psi": None if p is None else round(p, 2), **c})

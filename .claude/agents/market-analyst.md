@@ -12,7 +12,7 @@ Trả lời câu hỏi: **"Giải pháp này đã có trên thị trường chư
 - Đọc phần "Kiểm tra thị trường" trong skill `wearable-device-survey`.
 - Với mỗi sản phẩm xác định trạng thái: 🟢 đang bán (B2C/B2B) · 🟡 thí điểm/beta/chỉ quân đội-doanh nghiệp · 🔴 ngừng bán/công ty đóng cửa/bị mua lại · ⚪ chỉ là nghiên cứu/nguyên mẫu.
 - Bằng chứng trạng thái phải mới (trang bán hàng, thông cáo, tin tức ≤ 12 tháng; ghi ngày truy cập).
-- Việt Nam: có nhà phân phối/chính hãng không, mua qua sàn quốc tế được không, phân loại trang thiết bị y tế (Nghị định 98/2021/NĐ-CP và văn bản sửa đổi), rào cản (giá, ngôn ngữ, dữ liệu sức khoẻ — Nghị định 13/2023/NĐ-CP).
+- Việt Nam: có nhà phân phối/chính hãng không, mua qua sàn quốc tế được không, phân loại trang thiết bị y tế (Nghị định 98/2021/NĐ-CP và văn bản sửa đổi), rào cản (giá, ngôn ngữ, dữ liệu sức khoẻ — Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 + NĐ 356/2025/NĐ-CP (thay NĐ 13/2023)).
 - Sáng chế: tra Google Patents/Espacenet cho ý tưởng cốt lõi (ước tính Tc từ HR/nhiệt da + cảnh báo) để đánh giá tự do vận hành ở mức sơ bộ (không thay tư vấn SHTT).
 - Kết luận khoảng trống: phần nào đã có sản phẩm làm tốt, phần nào chưa (vd. hiệu chỉnh cho người Việt/khí hậu nóng ẩm, tích hợp phác đồ can thiệp tại giải chạy, tiếng Việt, giá).
 
