@@ -6,7 +6,7 @@ trên quần thể đích (vd. VĐV Việt Nam, khí hậu nóng ẩm) trước 
 
 Các mô hình:
   - ectemp():     Kalman filter ước tính Tc từ chuỗi nhịp tim (Buller et al., 2013, Physiol Meas 34:781).
-  - double_sensor(): phương pháp cảm biến kép / dòng nhiệt (Gunga et al., 2008): Tc = T1 + K*(T1 - T2).
+  - double_sensor(): phương pháp cảm biến kép / dòng nhiệt (Gunga et al., 2008, J Therm Biol): Tc = T1 + K*(T1 - T2).
   - psi():        Physiological Strain Index (Moran et al., 1998, Am J Physiol 275:R129).
   - classify():   phân tầng cảnh báo từ Tc, tốc độ tăng Tc, PSI.
 
@@ -34,6 +34,7 @@ ECTEMP_PARAMS = {
 # Ngưỡng cảnh báo mặc định (tham số, không phải chuẩn lâm sàng tuyệt đối)
 DEFAULT_THRESHOLDS = {
     "tc_levels": [  # (ngưỡng dưới, mức, nhãn)
+        # IOC 2021: chẩn đoán EHS khi Tre ≥ 40,5 °C + rối loạn TKTW; 40,0 giữ làm ngưỡng cảnh báo sớm (nhạy hơn)
         (40.0, 4, "NGUY HIỂM – nghi say nắng gắng sức (EHS): dừng ngay, đánh giá thần kinh, làm mát tích cực"),
         (39.5, 3, "CAO – dừng vận động, làm mát, theo dõi sát"),
         (39.0, 2, "CẢNH GIÁC – giảm cường độ, uống nước, nghỉ trong bóng râm"),
