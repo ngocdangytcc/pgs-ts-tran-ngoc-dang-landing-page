@@ -4,88 +4,209 @@
     "date": "2026-10-24",
     "note": "Mọi ngưỡng là THAM SỐ. Cột 'src' trỏ tới dòng trong bảng CSV của 01_clinical-advisor_clinical.md §2.3 hoặc 01_thermo-modeler_models.md. 'rel': verified (✅) / secondary (◐) / expert (❓, đề xuất – phải hiệu chỉnh bằng dữ liệu thực địa có viên nang/Tre). KHÔNG phải thiết bị y tế."
   },
-
   "ectemp": {
     "model": "Buller 2013 bậc 2 (hệ số trong heatstrain.ECTEMP_PARAMS, đã đối chiếu – thermo-modeler §1.1)",
-    "tc0_assumed": 37.1, "tc0_src": "Buller 2013 (equations.md)",
-    "v0_assumed": 0.02, "v0_src": "de Korte 2022 PMID 35813051 (v0=0,02 khi Tc0 giả định) ❓",
+    "tc0_assumed": 37.1,
+    "tc0_src": "Buller 2013 (equations.md)",
+    "v0_assumed": 0.02,
+    "v0_src": "de Korte 2022 PMID 35813051 (v0=0,02 khi Tc0 giả định) ❓",
     "v0_measured": 0.0,
-    "hr_clip_min": 40, "hr_clip_max": 195,
+    "hr_clip_min": 40,
+    "hr_clip_max": 195,
     "hr_clip_src": "Đỉnh parabol ECTemp ≈195 bpm tại 42,05 °C – thermo-modeler §1.1 (clip HR)",
-    "low_confidence_hr_above": 185, "low_confidence_src": "thermo-modeler §7.1",
-    "smoothing_min": 2, "smoothing_src": "SCR-T1..T4: trung bình trượt 2 phút"
+    "low_confidence_hr_above": 185,
+    "low_confidence_src": "thermo-modeler §7.1",
+    "smoothing_min": 2,
+    "smoothing_src": "SCR-T1..T4: trung bình trượt 2 phút"
   },
-
   "signal_qc": {
-    "hr_valid_min": 35, "hr_valid_max": 230,
+    "hr_valid_min": 35,
+    "hr_valid_max": 230,
     "max_jump_bpm_per_min": 25,
     "confirm_after": 2,
     "cadence_lock_tol_bpm": 3,
+    "cadence_lock_min_jump_bpm": 10,
     "min_device_quality": 0.5,
     "signal_lost_after_min": 3,
     "long_gap_min": 10,
     "rel": "expert ❓ (kỹ thuật xử lý tín hiệu, cần kiểm định trên dữ liệu PPG cổ tay khi chạy)"
   },
-
   "etc_levels": [
-    {"id": "SCR-T1", "threshold": 38.5, "level": 1, "rel": "expert"},
-    {"id": "SCR-T2", "threshold": 39.0, "level": 2, "rel": "expert", "src": "Gribok 2010 PMID 20371418"},
-    {"id": "SCR-T3", "threshold": 39.5, "level": 3, "rel": "expert", "src": "Gribok 2010; Buller 2013 PMID 23780514"},
-    {"id": "SCR-T4", "threshold": 40.0, "level": 3, "rel": "expert", "note": "chuẩn bị CWI; KHÔNG tự lên mức 4 (R3)"}
+    {
+      "id": "SCR-T1",
+      "threshold": 38.5,
+      "level": 1,
+      "rel": "expert"
+    },
+    {
+      "id": "SCR-T2",
+      "threshold": 39.0,
+      "level": 2,
+      "rel": "expert",
+      "src": "Gribok 2010 PMID 20371418"
+    },
+    {
+      "id": "SCR-T3",
+      "threshold": 39.5,
+      "level": 3,
+      "rel": "expert",
+      "src": "Gribok 2010; Buller 2013 PMID 23780514"
+    },
+    {
+      "id": "SCR-T4",
+      "threshold": 40.0,
+      "level": 3,
+      "rel": "expert",
+      "note": "chuẩn bị CWI; KHÔNG tự lên mức 4 (R3)"
+    }
   ],
   "etc_safety_offset_c": 0.5,
   "etc_safety_offset_src": "R5 (clinical §2.2): ECTemp đánh giá thấp Tc cao (Hunt 2019: ngưỡng ECTemp 38,4 ↔ Tc 39,0; de Korte 2022 độ nhạy 4 % tại >39,5)",
-  "offset_only_level3_needs_corroboration": true,
-  "corroboration_src": "Đề xuất của algorithm-engineer ❓: phần nâng mức nhờ offset R5 chỉ được lên mức 3 khi có tín hiệu độc lập thứ hai (tăng nhanh, aPSI/PSI, dáng đi, HR kéo dài, triệu chứng) – theo Buller 2022 (ECTemp + dáng đi) và Davey 2021 (tốc độ thay đổi + cảm nhận). eTc thô ≥ ngưỡng SCR-T3 vẫn lên mức 3 như bảng CSV.",
-
+  "level3_rule": {
+    "rule": "R8 (đề xuất của algorithm-engineer ❓)",
+    "strain_cap": 2,
+    "min_votes": 2,
+    "env_vote_min_level": 3,
+    "hard_signals": [
+      "dáng đi mất ổn định/gục (SCR-G1, R2)",
+      "eTc thô (chưa bù R5) ≥ SCR-T3 39,5 °C"
+    ],
+    "votes": [
+      "eTc+bù R5 ≥ 39,5",
+      "PSI hoặc aPSI ≥ 9 (tính 1 phiếu)",
+      "eTc tăng ≥0,5 °C/10 phút",
+      "HR ≥95 % HRmax >10 phút",
+      "WBGT cờ đen"
+    ],
+    "src": "Tín hiệu 'căng thẳng' (eTc có bù, PSI/aPSI, WBGT) chỉ đưa tối đa mức 2; mức 3 cần 1 tín hiệu cứng hoặc ≥2 tín hiệu độc lập. Dựa trên Buller 2022 (ECTemp + dáng đi), Davey 2021 (giá trị PSI cuối không phân biệt; tốc độ thay đổi có ích), IOC 2022 (nhiều VĐV >40 °C không triệu chứng). Mục đích: giữ độ nhạy (bù R5) mà không làm quá tải đội cơ động. Phải hiệu chỉnh."
+  },
   "risk_factor_offset_c_each": 0.3,
   "risk_factor_offset_c_max": 0.6,
   "risk_factor_psi_offset_each": 0.5,
   "risk_factor_psi_offset_max": 1.0,
   "risk_factor_src": "R6 (clinical §2.2, §5) – expert ❓",
-
-  "rise_rate": {"id": "SCR-R1", "delta_c": 0.5, "window_min": 10, "bump": 1, "cap": 3, "rel": "expert ❓ (0,05 °C/phút)"},
-
-  "psi": {"tc_max": 39.5, "use_personal_hrmax": true,
-          "levels": [{"id": "SCR-P1", "threshold": 7.0, "level": 2}, {"id": "SCR-P2", "threshold": 9.0, "level": 3}],
-          "src": "Moran 1998 PMID 9688970 (công thức); HRmax cá nhân theo thermo-modeler §5.1; ngưỡng expert ❓"},
-
-  "apsi": {"enabled": true, "verified": false,
-           "tc_crit_base": 39.5, "gradient_ref": 4.0, "gradient_div": 4.0,
-           "tc_crit_min": 38.5, "tc_crit_max": 40.5,
-           "hr_crit_frac": 0.90,
-           "levels": [{"id": "APSI-1", "threshold": 7.0, "level": 2}, {"id": "APSI-2", "threshold": 9.0, "level": 3}],
-           "src": "Buller 2023 PMID 37703905 / WO2017181195 – CÔNG THỨC ❓ CHƯA KIỂM CHỨNG (thermo-modeler §5.2); Buller 2025 phát hiện 86,7 % ca EHI"},
-
-  "hr_sustained": {"id": "SCR-H1", "pct_hrmax": 0.95, "min_minutes": 10, "bump": 1, "cap": 2, "rel": "expert ❓"},
-
-  "gait": {"id": "SCR-G1", "index_threshold": 0.6, "min_minutes": 2, "level": 3,
-           "src": "Buller 2022 BJSM doi:10.1136/bjsports-2021-104081 (ECTemp + mất ổn định dáng đi: 6/6 ca EHS); R2 – chỉ số gait cụ thể ❓"},
-
-  "cardiac": {"id": "SCR-H2", "level": 4, "src": "R4; Kim 2012 PMID 22236223"},
-
+  "rise_rate": {
+    "id": "SCR-R1",
+    "delta_c": 0.5,
+    "window_min": 10,
+    "bump": 1,
+    "cap": 3,
+    "rel": "expert ❓ (0,05 °C/phút)",
+    "apply_above_etc": 38.5,
+    "apply_above_src": "đề xuất ❓: Tc tăng nhanh ở 10–25 phút đầu là sinh lý (pha khởi động); chỉ xét khi eTc ≥ 38,5 (≈ ngưỡng quyết định 39,0 sau bù R5)"
+  },
+  "psi": {
+    "tc_max": 39.5,
+    "use_personal_hrmax": true,
+    "levels": [
+      {
+        "id": "SCR-P1",
+        "threshold": 7.0,
+        "level": 2
+      },
+      {
+        "id": "SCR-P2",
+        "threshold": 9.0,
+        "level": 3
+      }
+    ],
+    "src": "Moran 1998 PMID 9688970 (công thức); HRmax cá nhân theo thermo-modeler §5.1; ngưỡng expert ❓"
+  },
+  "apsi": {
+    "enabled": true,
+    "verified": false,
+    "tc_crit_base": 39.5,
+    "gradient_ref": 4.0,
+    "gradient_div": 4.0,
+    "tc_crit_min": 38.5,
+    "tc_crit_max": 40.5,
+    "hr_crit_frac": 0.9,
+    "levels": [
+      {
+        "id": "APSI-1",
+        "threshold": 7.0,
+        "level": 2
+      },
+      {
+        "id": "APSI-2",
+        "threshold": 9.0,
+        "level": 3
+      }
+    ],
+    "src": "Buller 2023 PMID 37703905 / WO2017181195 – CÔNG THỨC ❓ CHƯA KIỂM CHỨNG (thermo-modeler §5.2); Buller 2025 phát hiện 86,7 % ca EHI"
+  },
+  "hr_sustained": {
+    "id": "SCR-H1",
+    "pct_hrmax": 0.95,
+    "min_minutes": 10,
+    "bump": 1,
+    "cap": 2,
+    "rel": "expert ❓"
+  },
+  "gait": {
+    "id": "SCR-G1",
+    "index_threshold": 0.6,
+    "min_minutes": 2,
+    "level": 3,
+    "src": "Buller 2022 BJSM doi:10.1136/bjsports-2021-104081 (ECTemp + mất ổn định dáng đi: 6/6 ca EHS); R2 – chỉ số gait cụ thể ❓"
+  },
+  "cardiac": {
+    "id": "SCR-H2",
+    "level": 4,
+    "src": "R4; Kim 2012 PMID 22236223"
+  },
   "wbgt_flags": [
-    {"id": "ENV-0", "min": -99, "level": 0, "flag": "XANH"},
-    {"id": "ENV-1", "min": 18.0, "level": 1, "flag": "VÀNG"},
-    {"id": "ENV-2", "min": 23.0, "level": 2, "flag": "ĐỎ"},
-    {"id": "ENV-3", "min": 28.0001, "level": 3, "flag": "ĐEN"}
+    {
+      "id": "ENV-0",
+      "min": -99,
+      "level": 0,
+      "flag": "XANH"
+    },
+    {
+      "id": "ENV-1",
+      "min": 18.0,
+      "level": 1,
+      "flag": "VÀNG"
+    },
+    {
+      "id": "ENV-2",
+      "min": 23.0,
+      "level": 2,
+      "flag": "ĐỎ"
+    },
+    {
+      "id": "ENV-3",
+      "min": 28.0001,
+      "level": 3,
+      "flag": "ĐEN"
+    }
   ],
-  "wbgt_bump": {"rule": "R7", "min_env_level": 2, "bump": 1, "cap": 3, "only_if_personal_level_at_least": 1,
-                "src": "ACSM 1996 flag (◐); R7 expert ❓"},
-
-  "device_level_cap": 3, "device_level_cap_src": "R3",
-  "deescalate_after_min": 5, "deescalate_src": "expert ❓ (trễ hạ mức để tránh nhấp nháy)",
-
+  "wbgt_bump": {
+    "rule": "R7",
+    "min_env_level": 2,
+    "bump": 1,
+    "cap": 3,
+    "only_if_personal_level_at_least": 1,
+    "src": "ACSM 1996 flag (◐); R7 expert ❓"
+  },
+  "device_level_cap": 3,
+  "device_level_cap_src": "R3",
+  "deescalate_after_min": 5,
+  "deescalate_src": "expert ❓ (trễ hạ mức để tránh nhấp nháy)",
   "clinical": {
-    "tre_ehs": 40.5, "tre_ehs_src": "IOC 2021 PMID 33888465 (DX-T1) ✅",
-    "tre_stop_cooling": 39.0, "tre_stop_cooling_src": "IOC 2021 (DX-T3) ✅; cho phép 38,6–39,0",
-    "cooling_rate_min_c_per_min": 0.15, "cooling_rate_acceptable": 0.08, "cooling_rate_grace_min": 5,
+    "tre_ehs": 40.5,
+    "tre_ehs_src": "IOC 2021 PMID 33888465 (DX-T1) ✅",
+    "tre_stop_cooling": 39.0,
+    "tre_stop_cooling_src": "IOC 2021 (DX-T3) ✅; cho phép 38,6–39,0",
+    "cooling_rate_min_c_per_min": 0.15,
+    "cooling_rate_acceptable": 0.08,
+    "cooling_rate_grace_min": 5,
     "cooling_rate_src": "ACSM 2021/2023 ◐ (DX-T5)",
     "tre_overcool": 36.0
   },
-
   "eah": {
-    "na_low": 135, "na_severe": 125,
+    "na_low": 135,
+    "na_severe": 125,
     "tre_normal_or_mild_upper": 39.5,
     "tre_mild_src": "‘Tre bình thường hoặc tăng nhẹ’ (LAB-NA2) – giới hạn số ❓ expert",
     "weight_gain_pct": 0.0,

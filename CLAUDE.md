@@ -10,3 +10,4 @@
 | 2026-10-24 | Khởi tạo | Toàn bộ | - |
 | 2026-10-24 | Thêm agent `market-analyst` + Phase kiểm tra thị trường | agents/market-analyst.md, wearable-device-survey §3, orchestrator Phase 3 | Người dùng yêu cầu thêm bước kiểm tra "đã có trên thị trường chưa" |
 | 2026-10-24 | Sửa trích dẫn/tham số (Gunga 2008 J Therm Biol, aPSI Buller 2023, v0, kết quả kiểm định ECTemp) | skills/core-temp-modeling | Phát hiện của thermo-modeler khi chạy lần đầu |
+| 2026-10-24 | Bỏ lời khuyên "uống nước" mặc định ở mức 2 | skills/core-temp-modeling/scripts/heatstrain.py | Kịch bản hạ natri máu của algorithm-engineer cho thấy lời khuyên này có hại |

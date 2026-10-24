@@ -37,7 +37,7 @@ DEFAULT_THRESHOLDS = {
         # IOC 2021: chẩn đoán EHS khi Tre ≥ 40,5 °C + rối loạn TKTW; 40,0 giữ làm ngưỡng cảnh báo sớm (nhạy hơn)
         (40.0, 4, "NGUY HIỂM – nghi say nắng gắng sức (EHS): dừng ngay, đánh giá thần kinh, làm mát tích cực"),
         (39.5, 3, "CAO – dừng vận động, làm mát, theo dõi sát"),
-        (39.0, 2, "CẢNH GIÁC – giảm cường độ, uống nước, nghỉ trong bóng râm"),
+        (39.0, 2, "CẢNH GIÁC – giảm cường độ, nghỉ trong bóng râm, uống theo cảm giác khát (KHÔNG khuyến uống thêm nếu nghi hạ natri máu: tăng cân, phù, lú lẫn)"),
         (38.5, 1, "THEO DÕI – tăng tần suất kiểm tra"),
     ],
     "rise_rate_c_per_10min": 0.5,   # tốc độ tăng Tc đáng lo ngại (nâng 1 mức)

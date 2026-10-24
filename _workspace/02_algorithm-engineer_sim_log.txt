@@ -1,0 +1,281 @@
+==============================================================================================================
+S1 Chạy bán marathon bình thường, nóng ẩm  — hồ sơ S1-A0123 (tuổi 35, HRrest 62, HRmax 186, yếu tố nguy cơ [])
+-- Dòng thời gian (mỗi 10 phút + mọi phút có sự kiện):
+     0 | HR   69→ 69 | eTc 37.07±0.14 | PSI  0.2 | aPSI  0.3 | WBGT 26.0 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    10 | HR  146→146 | eTc 37.44±0.11 | PSI  4.1 | aPSI  4.7 | WBGT 26.2 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    20 | HR  151→151 | eTc 37.95±0.10 | PSI  5.3 | aPSI  6.1 | WBGT 26.3 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    22 | HR  152→152 | eTc 38.02±0.10 | PSI  5.4 | aPSI  6.1 | WBGT 26.4 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    30 | HR  145→145 | eTc 38.24±0.10 | PSI  5.9 | aPSI  6.6 | WBGT 26.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    40 | HR  149→149 | eTc 38.42±0.11 | PSI  6.2 | aPSI  7.0 | WBGT 26.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    50 | HR  153→153 | eTc 38.58±0.11 | PSI  6.7 | aPSI  7.4 | WBGT 26.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    60 | HR  155→155 | eTc 38.70±0.11 | PSI  7.1 | aPSI  7.8 | WBGT 27.0 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    70 | HR  156→156 | eTc 38.80±0.11 | PSI  7.4 | aPSI  8.0 | WBGT 27.2 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    80 | HR  155→155 | eTc 38.89±0.12 | PSI  7.5 | aPSI  8.2 | WBGT 27.3 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    90 | HR  156→156 | eTc 38.95±0.12 | PSI  7.7 | aPSI  8.2 | WBGT 27.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+   100 | HR  159→159 | eTc 38.99±0.12 | PSI  7.8 | aPSI  8.5 | WBGT 27.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+   110 | HR  160→160 | eTc 39.04±0.12 | PSI  8.0 | aPSI  8.7 | WBGT 27.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+   120 | HR  159→159 | eTc 39.09±0.12 | PSI  8.1 | aPSI  8.7 | WBGT 28.0 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+-- Sự kiện gửi DASHBOARD ban y tế:
+  [phút 0] MỨC 0 BÌNH THƯỜNG · ai: — · mục tiêu: —
+      hành động: Theo dõi nền
+      app VĐV  : (không)
+  [phút 22] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T1: eTc 38.02±0.10 °C (ngưỡng quyết định 38.52 sau bù R5/R6) | R7: WBGT 26.4 °C (cờ ĐỎ) +1
+-- So sánh với baseline 'chỉ ECTemp' (heatstrain.run: HR thô, không QC/clip, ngưỡng thư viện) + Tc 'thật' mô phỏng:
+  [phút   0] HR thô   69 | Tc mô phỏng 37.20 | engine eTc 37.07 mức 0 | baseline eTc 37.10 PSI 0.29 mức 0 'BÌNH THƯỜNG'
+  [phút  22] HR thô  152 | Tc mô phỏng 37.86 | engine eTc 38.02 mức 2 | baseline eTc 37.71 PSI 5.08 mức 0 'BÌNH THƯỜNG'
+-- Tóm tắt: {"minutes": 121, "max_level": 2, "max_level_baseline": 2, "minutes_at_level": {"0": 22, "1": 0, "2": 99, "3": 0, "4": 0}, "baseline_minutes_at_level": {"0": 54, "1": 6, "2": 61, "3": 0, "4": 0}, "first_lvl2": 22, "first_lvl3": null, "first_lvl4": null, "baseline_first_lvl2": 59, "baseline_first_lvl3": null, "true_tc_ge_39_5": null, "true_tc_ge_40_5": null, "true_tc_peak": 38.98, "etc_peak": 39.09, "baseline_etc_peak": 39.08, "bias_etc_minus_true": 0.04, "rmse": 0.1}
+==============================================================================================================
+S2 Tiến triển EHS, HR bão hoà  — hồ sơ S2-E0007 (tuổi 24, HRrest 50, HRmax 194, yếu tố nguy cơ ['mới ốm tiêu chảy 3 ngày trước'])
+-- Dòng thời gian (mỗi 10 phút + mọi phút có sự kiện):
+     0 | HR   69→ 69 | eTc 37.07±0.14 | PSI  0.6 | aPSI  0.7 | WBGT 28.5 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    10 | HR  168→168 | eTc 37.69±0.11 | PSI  5.4 | aPSI  6.0 | WBGT 28.5 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    11 | HR  169→169 | eTc 37.77±0.11 | PSI  5.5 | aPSI  6.1 | WBGT 28.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    20 | HR  175→175 | eTc 38.32±0.11 | PSI  6.9 | aPSI  7.5 | WBGT 28.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    28 | HR  178→178 | eTc 38.65±0.11 | PSI  7.7 | aPSI  8.5 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    30 | HR  174→174 | eTc 38.72±0.11 | PSI  7.8 | aPSI  8.6 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    40 | HR  181→181 | eTc 39.03±0.11 | PSI  8.6 | aPSI  9.5 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    50 | HR  188→188 | eTc 39.32±0.12 | PSI  9.4 | aPSI 10.4 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    60 | HR  189→189 | eTc 39.55±0.12 | PSI 10.0 | aPSI 11.1 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    70 | HR  190→190 | eTc 39.75±0.13 | PSI 10.4 | aPSI 11.6 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch THIRST
+    76 | HR  191→191 | eTc 39.86±0.13 | PSI 10.6 | aPSI 11.9 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 0 | dịch NPO
+    77 | HR  188→188 | eTc 39.87±0.13 | PSI 10.6 | aPSI 11.7 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 3 | dịch NPO
+    80 | HR  178→178 | eTc 39.91±0.13 | PSI 10.5 | aPSI 12.0 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 3 | dịch NPO
+    82 | HR  172→172 | eTc 39.91±0.14 | PSI 10.1 | aPSI 11.5 | WBGT 28.5 | mức 4 (CẤP CỨU) TB 3/Người 4 | dịch NPO
+    88 | HR  162→162 | eTc 39.88±0.14 | PSI  9.7 | aPSI 11.0 | WBGT 28.5 | mức 4 (CẤP CỨU) TB 3/Người 4 | dịch NPO
+    90 | HR  161→161 | eTc 39.85±0.14 | PSI  9.6 | aPSI 11.1 | WBGT 28.5 | mức 4 (CẤP CỨU) TB 3/Người 4 | dịch NPO
+    94 | HR  150→150 | eTc 39.78±0.14 | PSI  9.2 | aPSI 10.8 | WBGT 28.5 | mức 4 (CẤP CỨU) TB 3/Người 4 | dịch NPO
+    98 | HR  148→148 | eTc 39.69±0.14 | PSI  8.8 | aPSI 10.6 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 3 | dịch NPO
+   100 | HR  145→145 | eTc 39.64±0.14 | PSI  8.6 | aPSI 10.3 | WBGT 28.5 | mức 3 (NGUY CƠ CAO) TB 3/Người 3 | dịch NPO
+-- Sự kiện gửi DASHBOARD ban y tế:
+  [phút 0] MỨC 0 BÌNH THƯỜNG · ai: — · mục tiêu: —
+      hành động: Theo dõi nền
+      app VĐV  : (không)
+  [phút 11] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T1: eTc 37.77±0.11 °C (ngưỡng quyết định 38.57 sau bù R5/R6) | R7: WBGT 28.5 °C (cờ ĐEN) +1 | R8: 1/2 tín hiệu mức 3 (WBGT cờ ĐEN) → giữ mức 2
+  [phút 28] MỨC 3 NGUY CƠ CAO · ai: Đội cơ động · mục tiêu: ≤3–5 phút
+      hành động: Đội cơ động tới: đánh giá TKTW, loại trừ ngừng tim; nếu bất thường → khu xử trí nhiệt, đo Tre
+      app VĐV  : DỪNG CHẠY, ngồi/nằm nơi râm mát, chờ đội y tế đánh giá (yêu cầu đánh giá y tế, không phải loại khỏi cuộc đua). Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T2: eTc 38.65±0.11 °C (ngưỡng quyết định 39.45 sau bù R5/R6) | SCR-P1: PSI 7.7 | APSI-2: aPSI 8.5 (Tsk 35.3; công thức ❓ chưa kiểm chứng) | R8 mức 3: 2 tín hiệu độc lập: PSI/aPSI ≥ 9, WBGT cờ ĐEN
+  [phút 76] MỨC 3 NGUY CƠ CAO · ai: Đội cơ động · mục tiêu: ≤3–5 phút
+      hành động: Đội cơ động tới: đánh giá TKTW, loại trừ ngừng tim; nếu bất thường → khu xử trí nhiệt, đo Tre
+      app VĐV  : DỪNG CHẠY, ngồi/nằm nơi râm mát, chờ đội y tế đánh giá (yêu cầu đánh giá y tế, không phải loại khỏi cuộc đua). Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.86±0.13 °C (ngưỡng quyết định 40.66 sau bù R5/R6) | SCR-P2: PSI 10.6 | APSI-2: aPSI 11.9 (Tsk 36.7; công thức ❓ chưa kiểm chứng) | SCR-G1: dáng chạy mất ổn định 2 phút (chỉ số 0.80) → coi như nghi TKTW (R2) | R8 mức 3: dáng đi/gục (R2); eTc thô 39.86 ≥ SCR-T3
+  [phút 77] MỨC 3 NGUY CƠ CAO · CNS_UNEXPLAINED · ai: Đội cơ động + khu xử trí nhiệt · mục tiêu: ≤5–10 phút ❓
+      hành động: TKTW chưa rõ nguyên nhân: chuyển khu xử trí nhiệt bằng cáng/xe lăn; đo Tre; làm Na⁺ + glucose; nếu không đo được Tre và nghi do nhiệt → làm mát ngay
+      app VĐV  : DỪNG CHẠY, ngồi/nằm nơi râm mát, chờ đội y tế đánh giá (yêu cầu đánh giá y tế, không phải loại khỏi cuộc đua). Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.87±0.13 °C (ngưỡng quyết định 40.67 sau bù R5/R6) | SCR-P2: PSI 10.6 | APSI-2: aPSI 11.7 (Tsk 36.5; công thức ❓ chưa kiểm chứng) | SCR-G1: dáng chạy mất ổn định 3 phút (chỉ số 0.82) → coi như nghi TKTW (R2) | R8 mức 3: dáng đi/gục (R2); eTc thô 39.87 ≥ SCR-T3 | CLN-1/R2: dấu hiệu TKTW do người quan sát báo
+  [phút 82] MỨC 4 CẤP CỨU · EHS · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: làm mát ngay; hạ nhiệt ≤30 phút từ lúc gục
+      hành động: EHS: ngâm nước lạnh toàn thân (CWI 5–15 °C, khuấy) NGAY; theo dõi Tre liên tục; 4 người/bồn; làm Na⁺ + glucose khi không gián đoạn làm mát
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.91±0.14 °C (ngưỡng quyết định 40.71 sau bù R5/R6) | SCR-P2: PSI 10.1 | APSI-2: aPSI 11.5 (Tsk 37.1; công thức ❓ chưa kiểm chứng) | R8 mức 3: eTc thô 39.91 ≥ SCR-T3 | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | DX-T1: Tre 41.3 °C ≥ 40.5 + TKTW → EHS
+  [phút 88] MỨC 4 CẤP CỨU · EHS · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: làm mát ngay; hạ nhiệt ≤30 phút từ lúc gục
+      hành động: DX-T5: tốc độ làm mát 0.10 °C/phút < 0.15 → kiểm tra nước đủ lạnh, ngâm thân, khuấy
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.88±0.14 °C (ngưỡng quyết định 40.68 sau bù R5/R6) | SCR-P2: PSI 9.7 | APSI-2: aPSI 11.0 (Tsk 37.0; công thức ❓ chưa kiểm chứng) | R8 mức 3: eTc thô 39.88 ≥ SCR-T3 | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | DX-T1: Tre 41.3 °C ≥ 40.5 + TKTW → EHS | DX-T5: tốc độ làm mát 0.10 °C/phút < 0.15 → kiểm tra nước đủ lạnh, ngâm thân, khuấy
+  [phút 94] MỨC 4 CẤP CỨU · EHS · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: làm mát ngay; hạ nhiệt ≤30 phút từ lúc gục
+      hành động: Làm mát đạt 0.16 °C/phút; tiếp tục tới Tre 39.0
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.78±0.14 °C (ngưỡng quyết định 40.58 sau bù R5/R6) | SCR-P2: PSI 9.2 | APSI-2: aPSI 10.8 (Tsk 37.4; công thức ❓ chưa kiểm chứng) | R8 mức 3: eTc thô 39.78 ≥ SCR-T3 | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | DX-T1: Tre 41.3 °C ≥ 40.5 + TKTW → EHS | Làm mát đạt 0.16 °C/phút; tiếp tục tới Tre 39.0
+  [phút 98] MỨC 3 NGUY CƠ CAO · EHS · ai: Đội cơ động + khu xử trí nhiệt · mục tiêu: làm mát ngay; hạ nhiệt ≤30 phút từ lúc gục
+      hành động: DX-T3: Tre 39.0 ≤ 39.0 → NGỪNG làm mát, lau khô, theo dõi Tre ≥15 phút, ngâm lại nếu tăng; chuẩn bị chuyển viện (DX-T6)
+      app VĐV  : DỪNG CHẠY, ngồi/nằm nơi râm mát, chờ đội y tế đánh giá (yêu cầu đánh giá y tế, không phải loại khỏi cuộc đua). Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T4: eTc 39.69±0.14 °C (ngưỡng quyết định 40.49 sau bù R5/R6) | SCR-P2: PSI 8.8 | APSI-2: aPSI 10.6 (Tsk 37.6; công thức ❓ chưa kiểm chứng) | R8 mức 3: eTc thô 39.69 ≥ SCR-T3 | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | DX-T1: Tre 41.3 °C ≥ 40.5 + TKTW → EHS | DX-T3: Tre 39.0 ≤ 39.0 → NGỪNG làm mát, lau khô, theo dõi Tre ≥15 phút, ngâm lại nếu tăng; chuẩn bị chuyển viện (DX-T6)
+-- So sánh với baseline 'chỉ ECTemp' (heatstrain.run: HR thô, không QC/clip, ngưỡng thư viện) + Tc 'thật' mô phỏng:
+  [phút   0] HR thô   69 | Tc mô phỏng 37.30 | engine eTc 37.07 mức 0 | baseline eTc 37.10 PSI 0.73 mức 0 'BÌNH THƯỜNG'
+  [phút  11] HR thô  169 | Tc mô phỏng 37.75 | engine eTc 37.77 mức 2 | baseline eTc 37.37 PSI 5.13 mức 0 'BÌNH THƯỜNG'
+  [phút  28] HR thô  178 | Tc mô phỏng 38.51 | engine eTc 38.65 mức 3 | baseline eTc 38.22 PSI 7.26 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  30] HR thô  174 | Tc mô phỏng 38.60 | engine eTc 38.72 mức 3 | baseline eTc 38.31 PSI 7.29 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  40] HR thô  181 | Tc mô phỏng 39.05 | engine eTc 39.03 mức 3 | baseline eTc 38.70 PSI 8.38 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  50] HR thô  188 | Tc mô phỏng 39.50 | engine eTc 39.32 mức 3 | baseline eTc 39.06 PSI 9.39 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  60] HR thô  189 | Tc mô phỏng 40.10 | engine eTc 39.55 mức 3 | baseline eTc 39.35 PSI 10.03 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  67] HR thô  189 | Tc mô phỏng 40.52 | engine eTc 39.69 mức 3 | baseline eTc 39.52 PSI 10.38 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  70] HR thô  190 | Tc mô phỏng 40.70 | engine eTc 39.75 mức 3 | baseline eTc 39.59 PSI 10.56 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  75] HR thô  190 | Tc mô phỏng 41.00 | engine eTc 39.84 mức 3 | baseline eTc 39.69 PSI 10.78 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  76] HR thô  191 | Tc mô phỏng 41.06 | engine eTc 39.86 mức 3 | baseline eTc 39.71 PSI 10.86 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  77] HR thô  188 | Tc mô phỏng 41.12 | engine eTc 39.87 mức 3 | baseline eTc 39.73 PSI 10.78 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  80] HR thô  178 | Tc mô phỏng 41.30 | engine eTc 39.91 mức 3 | baseline eTc 39.77 PSI 10.49 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  82] HR thô  172 | Tc mô phỏng 41.30 | engine eTc 39.91 mức 4 | baseline eTc 39.77 PSI 10.26 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  88] HR thô  162 | Tc mô phỏng 40.90 | engine eTc 39.88 mức 4 | baseline eTc 39.75 PSI 9.82 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  94] HR thô  150 | Tc mô phỏng 39.70 | engine eTc 39.78 mức 4 | baseline eTc 39.66 PSI 9.19 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+  [phút  98] HR thô  148 | Tc mô phỏng 38.95 | engine eTc 39.69 mức 3 | baseline eTc 39.59 PSI 8.95 mức 3 'CAO – dừng vận động, làm mát, theo dõi s'
+-- Tóm tắt: {"minutes": 101, "max_level": 4, "max_level_baseline": 3, "minutes_at_level": {"0": 11, "1": 0, "2": 17, "3": 57, "4": 16}, "baseline_minutes_at_level": {"0": 19, "1": 7, "2": 41, "3": 34, "4": 0}, "first_lvl2": 11, "first_lvl3": 28, "first_lvl4": 82, "baseline_first_lvl2": 26, "baseline_first_lvl3": 67, "true_tc_ge_39_5": 50, "true_tc_ge_40_5": 67, "true_tc_peak": 41.3, "etc_peak": 39.91, "baseline_etc_peak": 39.77, "bias_etc_minus_true": -0.3, "rmse": 0.59}
+==============================================================================================================
+S3 Nhiễu/mất tín hiệu HR (+ gục, mất tín hiệu tim cuối)  — hồ sơ S3-A0456 (tuổi 35, HRrest 62, HRmax 186, yếu tố nguy cơ [])
+-- Dòng thời gian (mỗi 10 phút + mọi phút có sự kiện):
+     0 | HR   69→ 69 | eTc 37.07±0.14 | PSI  0.2 | aPSI  0.3 | WBGT 26.0 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    10 | HR  146→146 | eTc 37.44±0.11 | PSI  4.1 | aPSI  4.7 | WBGT 26.2 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    20 | HR  151→151 | eTc 37.91±0.11 | PSI  5.3 | aPSI  6.0 | WBGT 26.3 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST
+    24 | HR  145→145 | eTc 38.02±0.11 | PSI  5.4 | aPSI  6.0 | WBGT 26.4 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    30 | HR  145→145 | eTc 38.20±0.11 | PSI  5.8 | aPSI  6.6 | WBGT 26.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    40 | HR  167→  — | eTc 38.38±0.11 | PSI  6.1 | aPSI  6.9 | WBGT 26.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    42 | HR  168→  — | eTc 38.38±0.12 | PSI    — | aPSI    — | WBGT 26.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    45 | HR  152→152 | eTc 38.40±0.12 | PSI  6.3 | aPSI  7.1 | WBGT 26.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    50 | HR  153→153 | eTc 38.50±0.12 | PSI  6.6 | aPSI  7.3 | WBGT 26.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    57 | HR None→  — | eTc 38.57±0.12 | PSI    — | aPSI    — | WBGT 26.9 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    60 | HR None→  — | eTc 38.57±0.13 | PSI    — | aPSI    — | WBGT 27.0 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    64 | HR None→  — | eTc 38.57±0.14 | PSI    — | aPSI    — | WBGT 27.1 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    67 | HR  156→156 | eTc 38.59±0.14 | PSI  6.9 | aPSI  7.7 | WBGT 27.1 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    70 | HR  156→156 | eTc 38.66±0.13 | PSI  7.1 | aPSI  7.8 | WBGT 27.2 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    80 | HR  155→155 | eTc 38.81±0.12 | PSI  7.4 | aPSI  8.1 | WBGT 27.3 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST
+    90 | HR None→  — | eTc 38.90±0.12 | PSI  7.6 | aPSI  8.2 | WBGT 27.5 | mức 4 (CẤP CỨU) TB 4/Người 0 | dịch NPO
+    92 | HR None→  — | eTc 38.90±0.13 | PSI    — | aPSI    — | WBGT 27.5 | mức 4 (CẤP CỨU) TB 4/Người 0 | dịch NPO
+-- Sự kiện gửi DASHBOARD ban y tế:
+  [phút 0] MỨC 0 BÌNH THƯỜNG · ai: — · mục tiêu: —
+      hành động: Theo dõi nền
+      app VĐV  : (không)
+  [phút 24] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T1: eTc 38.02±0.11 °C (ngưỡng quyết định 38.52 sau bù R5/R6) | R7: WBGT 26.4 °C (cờ ĐỎ) +1
+  [phút 42] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T1: eTc 38.38±0.12 °C (ngưỡng quyết định 38.88 sau bù R5/R6) | R7: WBGT 26.7 °C (cờ ĐỎ) +1
+      kỹ thuật : MẤT TÍN HIỆU HR 3 phút: giữ mức cũ, không hạ mức
+      QC       : QC loại mẫu HR: nghi khoá theo nhịp bước (HR 168 ≈ cadence 168, nhảy từ 148)
+  [phút 45] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T1: eTc 38.40±0.12 °C (ngưỡng quyết định 38.90 sau bù R5/R6) | APSI-1: aPSI 7.1 (Tsk 34.6; công thức ❓ chưa kiểm chứng)
+  [phút 57] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T2: eTc 38.57±0.12 °C (ngưỡng quyết định 39.07 sau bù R5/R6)
+      kỹ thuật : MẤT TÍN HIỆU HR 3 phút: giữ mức cũ, không hạ mức
+  [phút 64] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T2: eTc 38.57±0.13 °C (ngưỡng quyết định 39.07 sau bù R5/R6)
+      kỹ thuật : MẤT TÍN HIỆU HR 10 phút: eTc chỉ dự báo (SD 0.13); quan sát viên kiểm tra trực tiếp VĐV + thiết bị
+  [phút 67] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: uống theo cảm giác khát, không uống ép.
+      lý do    : SCR-T2: eTc 38.59±0.14 °C (ngưỡng quyết định 39.09 sau bù R5/R6) | APSI-1: aPSI 7.7 (Tsk 34.9; công thức ❓ chưa kiểm chứng)
+  [phút 90] MỨC 4 CẤP CỨU · CARDIAC · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: CPR ngay; sốc điện ≤3–5 phút ❓
+      hành động: NGHI NGỪNG TIM: điều đội AED gần nhất; người chứng kiến CPR ngay; loại trừ tim TRƯỚC xử trí nhiệt (R4, IOC 2021)
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T2: eTc 38.90±0.12 °C (ngưỡng quyết định 39.40 sau bù R5/R6) | SCR-P1: PSI 7.6 | APSI-1: aPSI 8.2 (Tsk 34.5; công thức ❓ chưa kiểm chứng) | SCR-H2/R4: gục + bất động + mất tín hiệu tim
+  [phút 92] MỨC 4 CẤP CỨU · CARDIAC · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: CPR ngay; sốc điện ≤3–5 phút ❓
+      hành động: NGHI NGỪNG TIM: điều đội AED gần nhất; người chứng kiến CPR ngay; loại trừ tim TRƯỚC xử trí nhiệt (R4, IOC 2021)
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T2: eTc 38.90±0.13 °C (ngưỡng quyết định 39.40 sau bù R5/R6) | SCR-H2/R4: gục + bất động + mất tín hiệu tim
+      kỹ thuật : MẤT TÍN HIỆU HR 3 phút: giữ mức cũ, không hạ mức
+-- Mẫu HR bị QC loại: p15: ngoài miền sinh lý (238); p22: ngoài miền sinh lý (0); p31: bước nhảy bất thường (145→205); p40: nghi khoá theo nhịp bước (HR 167 ≈ cadence 168, nhảy từ 148); p41: nghi khoá theo nhịp bước (HR 167 ≈ cadence 168, nhảy từ 148); p42: nghi khoá theo nhịp bước (HR 168 ≈ cadence 168, nhảy từ 148); p43: nghi khoá theo nhịp bước (HR 167 ≈ cadence 168, nhảy từ 148); p44: nghi khoá theo nhịp bước (HR 167 ≈ cadence 168, nhảy từ 148)
+-- So sánh với baseline 'chỉ ECTemp' (heatstrain.run: HR thô, không QC/clip, ngưỡng thư viện) + Tc 'thật' mô phỏng:
+  [phút   0] HR thô   69 | Tc mô phỏng 37.20 | engine eTc 37.07 mức 0 | baseline eTc 37.10 PSI 0.29 mức 0 'BÌNH THƯỜNG'
+  [phút  14] HR thô  149 | Tc mô phỏng 37.62 | engine eTc 37.68 mức 0 | baseline eTc 37.39 PSI 4.29 mức 0 'BÌNH THƯỜNG'
+  [phút  15] HR thô  238 | Tc mô phỏng 37.65 | engine eTc 37.71 mức 0 | baseline eTc 37.50 PSI 8.29 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  16] HR thô  148 | Tc mô phỏng 37.68 | engine eTc 37.73 mức 0 | baseline eTc 37.53 PSI 4.55 mức 0 'BÌNH THƯỜNG'
+  [phút  21] HR thô  146 | Tc mô phỏng 37.83 | engine eTc 37.95 mức 0 | baseline eTc 37.72 PSI 4.84 mức 0 'BÌNH THƯỜNG'
+  [phút  22] HR thô    0 | Tc mô phỏng 37.86 | engine eTc 37.97 mức 0 | baseline eTc 37.62 PSI -1.54 mức 0 'BÌNH THƯỜNG'
+  [phút  23] HR thô  150 | Tc mô phỏng 37.89 | engine eTc 37.99 mức 0 | baseline eTc 37.66 PSI 4.9 mức 0 'BÌNH THƯỜNG'
+  [phút  24] HR thô  145 | Tc mô phỏng 37.92 | engine eTc 38.02 mức 2 | baseline eTc 37.70 PSI 4.76 mức 0 'BÌNH THƯỜNG'
+  [phút  30] HR thô  145 | Tc mô phỏng 38.10 | engine eTc 38.20 mức 2 | baseline eTc 37.91 PSI 5.21 mức 0 'BÌNH THƯỜNG'
+  [phút  31] HR thô  205 | Tc mô phỏng 38.13 | engine eTc 38.21 mức 2 | baseline eTc 38.00 PSI 7.93 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  32] HR thô  147 | Tc mô phỏng 38.16 | engine eTc 38.22 mức 2 | baseline eTc 38.03 PSI 5.53 mức 0 'BÌNH THƯỜNG'
+  [phút  39] HR thô  148 | Tc mô phỏng 38.37 | engine eTc 38.38 mức 2 | baseline eTc 38.20 PSI 5.94 mức 0 'BÌNH THƯỜNG'
+  [phút  40] HR thô  167 | Tc mô phỏng 38.40 | engine eTc 38.38 mức 2 | baseline eTc 38.24 PSI 6.83 mức 0 'BÌNH THƯỜNG'
+  [phút  42] HR thô  168 | Tc mô phỏng 38.46 | engine eTc 38.38 mức 2 | baseline eTc 38.32 PSI 7.04 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  44] HR thô  167 | Tc mô phỏng 38.52 | engine eTc 38.38 mức 2 | baseline eTc 38.39 PSI 7.14 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  45] HR thô  152 | Tc mô phỏng 38.55 | engine eTc 38.40 mức 2 | baseline eTc 38.41 PSI 6.54 mức 0 'BÌNH THƯỜNG'
+  [phút  46] HR thô  152 | Tc mô phỏng 38.58 | engine eTc 38.42 mức 2 | baseline eTc 38.43 PSI 6.58 mức 0 'BÌNH THƯỜNG'
+  [phút  54] HR thô  152 | Tc mô phỏng 38.72 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI 6.84 mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  56] HR thô None | Tc mô phỏng 38.72 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  57] HR thô None | Tc mô phỏng 38.73 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  60] HR thô None | Tc mô phỏng 38.74 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  64] HR thô None | Tc mô phỏng 38.76 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  66] HR thô None | Tc mô phỏng 38.76 | engine eTc 38.57 mức 2 | baseline eTc 38.55 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  67] HR thô  156 | Tc mô phỏng 38.77 | engine eTc 38.59 mức 2 | baseline eTc 38.58 PSI 7.06 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  68] HR thô  154 | Tc mô phỏng 38.77 | engine eTc 38.61 mức 2 | baseline eTc 38.60 PSI 7.02 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  89] HR thô  158 | Tc mô phỏng 38.86 | engine eTc 38.89 mức 2 | baseline eTc 38.88 PSI 7.77 mức 2 'CẢNH GIÁC – giảm cường độ, uống nước, ng'
+  [phút  90] HR thô None | Tc mô phỏng 38.86 | engine eTc 38.90 mức 4 | baseline eTc 38.88 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+  [phút  92] HR thô None | Tc mô phỏng 38.87 | engine eTc 38.90 mức 4 | baseline eTc 38.88 PSI None mức 1 'THEO DÕI – tăng tần suất kiểm tra'
+-- Tóm tắt: {"minutes": 96, "max_level": 4, "max_level_baseline": 2, "minutes_at_level": {"0": 24, "1": 0, "2": 66, "3": 0, "4": 6}, "baseline_minutes_at_level": {"0": 46, "1": 22, "2": 28, "3": 0, "4": 0}, "first_lvl2": 24, "first_lvl3": 90, "first_lvl4": 90, "baseline_first_lvl2": 15, "baseline_first_lvl3": null, "true_tc_ge_39_5": null, "true_tc_ge_40_5": null, "true_tc_peak": 38.88, "etc_peak": 38.9, "baseline_etc_peak": 38.88, "bias_etc_minus_true": -0.05, "rmse": 0.12}
+==============================================================================================================
+S4 Hạ natri máu do gắng sức (EAH)  — hồ sơ S4-F0890 (tuổi 45, HRrest 66, HRmax 175, yếu tố nguy cơ [])
+-- Dòng thời gian (mỗi 10 phút + mọi phút có sự kiện):
+     0 | HR   74→ 74 | eTc 37.08±0.14 | PSI  0.3 | aPSI  0.4 | WBGT 24.0 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST_EAH_RISK
+    10 | HR  124→124 | eTc 37.33±0.11 | PSI  3.2 | aPSI  3.7 | WBGT 24.2 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST_EAH_RISK
+    20 | HR  128→128 | eTc 37.67±0.10 | PSI  4.0 | aPSI  4.6 | WBGT 24.3 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST_EAH_RISK
+    30 | HR  121→121 | eTc 37.85±0.10 | PSI  4.3 | aPSI  4.8 | WBGT 24.5 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST_EAH_RISK
+    40 | HR  125→125 | eTc 37.94±0.10 | PSI  4.4 | aPSI  5.0 | WBGT 24.6 | mức 0 (BÌNH THƯỜNG) TB 0/Người 0 | dịch THIRST_EAH_RISK
+    46 | HR  127→127 | eTc 38.00±0.10 | PSI  4.7 | aPSI  5.3 | WBGT 24.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+    50 | HR  128→128 | eTc 38.03±0.10 | PSI  4.8 | aPSI  5.3 | WBGT 24.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+    60 | HR  129→129 | eTc 38.08±0.10 | PSI  5.0 | aPSI  5.5 | WBGT 25.0 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+    70 | HR  130→130 | eTc 38.13±0.11 | PSI  5.1 | aPSI  5.6 | WBGT 25.1 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+    80 | HR  127→127 | eTc 38.17±0.11 | PSI  5.1 | aPSI  5.6 | WBGT 25.3 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+    90 | HR  128→128 | eTc 38.18±0.11 | PSI  5.1 | aPSI  5.6 | WBGT 25.5 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   100 | HR  130→130 | eTc 38.17±0.11 | PSI  5.1 | aPSI  5.7 | WBGT 25.6 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   110 | HR  130→130 | eTc 38.19±0.11 | PSI  5.2 | aPSI  5.8 | WBGT 25.8 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   120 | HR  128→128 | eTc 38.20±0.11 | PSI  5.2 | aPSI  5.7 | WBGT 25.9 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   130 | HR  126→126 | eTc 38.22±0.11 | PSI  5.1 | aPSI  5.5 | WBGT 26.1 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   140 | HR  128→128 | eTc 38.23±0.11 | PSI  5.2 | aPSI  5.7 | WBGT 26.3 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   150 | HR  132→132 | eTc 38.23±0.11 | PSI  5.2 | aPSI  5.7 | WBGT 26.4 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   160 | HR  129→129 | eTc 38.22±0.11 | PSI  5.1 | aPSI  5.6 | WBGT 26.6 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   170 | HR  126→126 | eTc 38.21±0.11 | PSI  5.1 | aPSI  5.5 | WBGT 26.7 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   180 | HR  132→132 | eTc 38.25±0.11 | PSI  5.5 | aPSI  6.0 | WBGT 26.9 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   190 | HR  128→128 | eTc 38.27±0.11 | PSI  5.4 | aPSI  5.9 | WBGT 27.1 | mức 2 (CẢNH BÁO) TB 2/Người 0 | dịch THIRST_EAH_RISK
+   200 | HR  131→131 | eTc 38.27±0.11 | PSI  5.3 | aPSI  5.9 | WBGT 27.2 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   210 | HR  131→131 | eTc 38.29±0.11 | PSI  5.4 | aPSI  5.9 | WBGT 27.4 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   220 | HR  127→127 | eTc 38.29±0.11 | PSI  5.3 | aPSI  5.8 | WBGT 27.5 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   230 | HR  130→130 | eTc 38.29±0.11 | PSI  5.5 | aPSI  6.0 | WBGT 27.7 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   240 | HR  128→128 | eTc 38.28±0.11 | PSI  5.4 | aPSI  5.8 | WBGT 27.9 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   250 | HR  132→132 | eTc 38.29±0.11 | PSI  5.5 | aPSI  6.0 | WBGT 28.0 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   260 | HR  130→130 | eTc 38.30±0.11 | PSI  5.4 | aPSI  6.0 | WBGT 28.2 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   270 | HR  131→131 | eTc 38.30±0.11 | PSI  5.5 | aPSI  6.0 | WBGT 28.4 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   280 | HR  134→134 | eTc 38.31±0.11 | PSI  5.6 | aPSI  6.1 | WBGT 28.5 | mức 2 (CẢNH BÁO) TB 2/Người 2 | dịch RESTRICT
+   290 | HR  112→112 | eTc 38.23±0.11 | PSI  4.6 | aPSI  5.0 | WBGT 28.7 | mức 3 (NGUY CƠ CAO) TB 2/Người 3 | dịch NPO
+   294 | HR  114→114 | eTc 38.17±0.11 | PSI  4.4 | aPSI  4.8 | WBGT 28.7 | mức 4 (CẤP CỨU) TB 2/Người 4 | dịch NPO
+   299 | HR  116→116 | eTc 38.12±0.11 | PSI  4.4 | aPSI  4.8 | WBGT 28.8 | mức 4 (CẤP CỨU) TB 2/Người 4 | dịch NPO
+   300 | HR  114→114 | eTc 38.10±0.11 | PSI  4.3 | aPSI  4.8 | WBGT 28.8 | mức 4 (CẤP CỨU) TB 2/Người 4 | dịch NPO
+   310 | HR  117→117 | eTc 38.02±0.11 | PSI  4.2 | aPSI  4.7 | WBGT 29.0 | mức 4 (CẤP CỨU) TB 2/Người 4 | dịch NPO
+-- Sự kiện gửi DASHBOARD ban y tế:
+  [phút 0] MỨC 0 BÌNH THƯỜNG · ai: — · mục tiêu: —
+      hành động: Theo dõi nền
+      app VĐV  : Dịch: chỉ uống khi khát; KHÔNG uống ở mọi trạm (thuộc nhóm nguy cơ hạ natri máu).
+  [phút 46] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: chỉ uống khi khát; KHÔNG uống ở mọi trạm (thuộc nhóm nguy cơ hạ natri máu).
+      lý do    : SCR-T1: eTc 38.00±0.10 °C (ngưỡng quyết định 38.50 sau bù R5/R6) | R7: WBGT 24.7 °C (cờ ĐỎ) +1
+  [phút 200] MỨC 2 CẢNH BÁO · ai: VĐV + người quan sát · mục tiêu: ≤5 phút
+      hành động: Người quan sát/TNV y tế gần nhất tiếp cận, quan sát dáng chạy, hỏi định hướng (tên, km, ngày)
+      app VĐV  : Giảm tốc rõ hoặc đi bộ; người quan sát sẽ tới hỏi thăm. Dịch: KHÔNG uống thêm nước lọc/dịch nhược trương; báo trạm y tế làm Na⁺ (nghi nguy cơ EAH).
+      lý do    : SCR-T1: eTc 38.27±0.11 °C (ngưỡng quyết định 38.77 sau bù R5/R6) | R7: WBGT 27.2 °C (cờ ĐỎ) +1 | SCR-W1: tăng cân +1.8 % trong giải → nguy cơ EAH
+  [phút 290] MỨC 3 NGUY CƠ CAO · CNS_UNEXPLAINED · ai: Đội cơ động + khu xử trí nhiệt · mục tiêu: ≤5–10 phút ❓
+      hành động: TKTW chưa rõ nguyên nhân: chuyển khu xử trí nhiệt bằng cáng/xe lăn; đo Tre; làm Na⁺ + glucose; nếu không đo được Tre và nghi do nhiệt → làm mát ngay
+      app VĐV  : DỪNG CHẠY, ngồi/nằm nơi râm mát, chờ đội y tế đánh giá (yêu cầu đánh giá y tế, không phải loại khỏi cuộc đua). Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T1: eTc 38.23±0.11 °C (ngưỡng quyết định 38.73 sau bù R5/R6) | R7: WBGT 28.7 °C (cờ ĐEN) +1 | R8: 1/2 tín hiệu mức 3 (WBGT cờ ĐEN) → giữ mức 2 | SCR-W1: tăng cân +1.8 % trong giải → nguy cơ EAH | CLN-1/R2: dấu hiệu TKTW do người quan sát báo
+  [phút 294] MỨC 4 CẤP CỨU · EAH_SEVERE · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: bolus đầu ngay khi nghi ngờ
+      hành động: EAH NẶNG (nghi/xác định): NaCl 3 % 100 mL TM bolus, nhắc lại mỗi 10 phút tối đa 3 lần; KHÔNG truyền dịch nhược trương, KHÔNG cho uống nước; chuyển viện
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T1: eTc 38.17±0.11 °C (ngưỡng quyết định 38.67 sau bù R5/R6) | R7: WBGT 28.7 °C (cờ ĐEN) +1 | R8: 1/2 tín hiệu mức 3 (WBGT cờ ĐEN) → giữ mức 2 | SCR-W1: tăng cân +1.8 % trong giải → nguy cơ EAH | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | LAB-NA2: TKTW, chưa có Na⁺, Tre 38.4 bình thường/tăng nhẹ + dấu hiệu EAH → xử trí như EAH nặng
+  [phút 299] MỨC 4 CẤP CỨU · EAH_SEVERE · ai: Toàn chuỗi cứu sống + EMS · mục tiêu: bolus đầu ngay khi nghi ngờ
+      hành động: EAH NẶNG (nghi/xác định): NaCl 3 % 100 mL TM bolus, nhắc lại mỗi 10 phút tối đa 3 lần; KHÔNG truyền dịch nhược trương, KHÔNG cho uống nước; chuyển viện
+      app VĐV  : Đội cấp cứu đang tới. Dịch: KHÔNG cho uống cho tới khi có Na⁺ và loại trừ EAH (IOC 2021; WMS 2019).
+      lý do    : SCR-T1: eTc 38.12±0.11 °C (ngưỡng quyết định 38.62 sau bù R5/R6) | R7: WBGT 28.8 °C (cờ ĐEN) +1 | R8: 1/2 tín hiệu mức 3 (WBGT cờ ĐEN) → giữ mức 2 | SCR-W1: tăng cân +1.8 % trong giải → nguy cơ EAH | LAB-NA1: Na⁺ 127 mmol/L | CLN-1/R2: dấu hiệu TKTW do người quan sát báo | LAB-NA2: TKTW + Na⁺ 127 → EAH nặng
+-- So sánh với baseline 'chỉ ECTemp' (heatstrain.run: HR thô, không QC/clip, ngưỡng thư viện) + Tc 'thật' mô phỏng:
+  [phút   0] HR thô   74 | Tc mô phỏng 37.10 | engine eTc 37.08 mức 0 | baseline eTc 37.10 PSI 0.35 mức 0 'BÌNH THƯỜNG'
+  [phút  46] HR thô  127 | Tc mô phỏng 38.10 | engine eTc 38.00 mức 2 | baseline eTc 37.91 PSI 4.36 mức 0 'BÌNH THƯỜNG'
+  [phút 200] HR thô  131 | Tc mô phỏng 38.18 | engine eTc 38.27 mức 2 | baseline eTc 38.27 PSI 5.28 mức 0 'BÌNH THƯỜNG'
+  [phút 290] HR thô  112 | Tc mô phỏng 38.23 | engine eTc 38.23 mức 3 | baseline eTc 38.22 PSI 4.35 mức 0 'BÌNH THƯỜNG'
+  [phút 294] HR thô  114 | Tc mô phỏng 38.23 | engine eTc 38.17 mức 4 | baseline eTc 38.16 PSI 4.31 mức 0 'BÌNH THƯỜNG'
+  [phút 299] HR thô  116 | Tc mô phỏng 38.23 | engine eTc 38.12 mức 4 | baseline eTc 38.11 PSI 4.3 mức 0 'BÌNH THƯỜNG'
+-- Tóm tắt: {"minutes": 311, "max_level": 4, "max_level_baseline": 0, "minutes_at_level": {"0": 46, "1": 0, "2": 244, "3": 4, "4": 17}, "baseline_minutes_at_level": {"0": 311, "1": 0, "2": 0, "3": 0, "4": 0}, "first_lvl2": 46, "first_lvl3": 290, "first_lvl4": 294, "baseline_first_lvl2": null, "baseline_first_lvl3": null, "true_tc_ge_39_5": null, "true_tc_ge_40_5": null, "true_tc_peak": 38.23, "etc_peak": 38.32, "baseline_etc_peak": 38.31, "bias_etc_minus_true": 0.04, "rmse": 0.08}
+==============================================================================================================
+PHÂN TÍCH ĐỘ NHẠY CẤU HÌNH (S1: phút ở mức ≥2 / ≥3 trên 121 phút; S2: phút đầu tiên mức ≥2/≥3 và mức 3 TRƯỚC khi gục [phút 80]; Tc mô phỏng ≥39,5 ở phút 50, ≥40,5 ở phút 67)
+  A. Mặc định (CSV clinical + R5 bù 0,5 + R7 đỏ/đen + R8)    S1 ≥2:  99 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p28 (sớm 52 ph trước gục)
+  B. R7 chỉ cộng khi cờ ĐEN                                  S1 ≥2:  82 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p28 (sớm 52 ph trước gục)
+  C. B + PSI/aPSI ngưỡng 8/10 (VĐV)                          S1 ≥2:  76 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p30 (sớm 50 ph trước gục)
+  D. Không bù R5 (offset 0)                                  S1 ≥2:  82 ph, ≥3:   0 ph | S2 đầu ≥2: p14, ≥3: p28 (sớm 52 ph trước gục)
+  E. Mặc định, tắt aPSI (thiết bị không có Tsk)              S1 ≥2:  99 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p30 (sớm 50 ph trước gục)
+  F. Chỉ HR (không Tsk, không gia tốc)                       S1 ≥2:  99 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p30 (sớm 50 ph trước gục)
+  G. R8 không tính phiếu WBGT đen                            S1 ≥2:  99 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p30 (sớm 50 ph trước gục)
+  H. Chỉ HR + R8 không tính WBGT                             S1 ≥2:  99 ph, ≥3:   0 ph | S2 đầu ≥2: p11, ≥3: p40 (sớm 40 ph trước gục)
+==============================================================================================================
+TỰ KIỂM TRA bất biến an toàn (R1, R3, không khuyên uống khi NPO/RESTRICT, không CWI cho EAH): ĐẠT (0 vi phạm)
+Đã ghi /tmp/claude-0/-home-user-pgs-ts-tran-ngoc-dang-landing-page/850ef10d-a6a3-5d32-83dc-187dc4b0066a/scratchpad/sim.json
